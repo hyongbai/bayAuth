@@ -33,9 +33,7 @@ public class QQHelper extends OauthHelper {
 		public void onError(UiError uiError) {
 			oauthFailed(uiError);
 			if (DEBUG) {
-				Log.d(TAG, "onComplete()  UiError " + uiError.errorCode
-						+ " errorMessage=" + uiError.errorMessage
-						+ " errorDetail=" + uiError.errorDetail);
+				Log.d(TAG, "onComplete()  UiError " + uiError.errorCode + " errorMessage=" + uiError.errorMessage + " errorDetail=" + uiError.errorDetail);
 			}
 		}
 
@@ -77,8 +75,6 @@ public class QQHelper extends OauthHelper {
 				Activity activity = mActivity;
 				mTencent.logout(activity);
 				mTencent.login(activity, "all", listener);
-				// mTencent.loginWithOEM(activity, "all", listener, "10000144",
-				// "10000144", "xxxx");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -94,13 +90,11 @@ public class QQHelper extends OauthHelper {
 	}
 
 	@SuppressLint("SdCardPath")
-	public void shareToQQSpace(String title, String summary, String targetURL,
-			String imageUrl) {// String id
+	public void shareToQQSpace(String title, String summary, String targetURL, String imageUrl) {// String id
 		try {
 			Bundle bundle = new Bundle();
 			bundle.putInt(QzoneShare.SHARE_TO_QZONE_KEY_TYPE, shareType);
-			bundle.putString(QzoneShare.SHARE_TO_QQ_TARGET_URL,
-					targetURL);
+			bundle.putString(QzoneShare.SHARE_TO_QQ_TARGET_URL, targetURL);
 			bundle.putString(QzoneShare.SHARE_TO_QQ_TITLE, title);
 			bundle.putString(QzoneShare.SHARE_TO_QQ_SUMMARY, summary);
 			bundle.putString(QzoneShare.SHARE_TO_QQ_IMAGE_URL, imageUrl);
