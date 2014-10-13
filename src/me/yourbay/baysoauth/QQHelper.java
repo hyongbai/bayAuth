@@ -100,14 +100,12 @@ public class QQHelper extends OauthHelper {
 			Bundle bundle = new Bundle();
 			bundle.putInt(QzoneShare.SHARE_TO_QZONE_KEY_TYPE, shareType);
 			bundle.putString(QzoneShare.SHARE_TO_QQ_TARGET_URL,
-			// " http://dev.cliq123.com/sharelink?link=" + link);
 					targetURL);
 			bundle.putString(QzoneShare.SHARE_TO_QQ_TITLE, title);
 			bundle.putString(QzoneShare.SHARE_TO_QQ_SUMMARY, summary);
 			bundle.putString(QzoneShare.SHARE_TO_QQ_IMAGE_URL, imageUrl);
 			// "/sdcard/eclipse_logo_colour.png");
 			// "http://img3.cache.netease.com/photo/0005/2013-03-07/8PBKS8G400BV0005.jpg");
-			// " http://dev.cliq123.com/share/shareimg?link=" + link);
 			mTencent.shareToQQ(mActivity, bundle, listener);
 		} catch (Exception e) {
 			e.printStackTrace();
